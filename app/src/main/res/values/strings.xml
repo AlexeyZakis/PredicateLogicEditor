@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Predicate logic editor</string>
+
+    <string name="any">∀</string>
+    <string name="exist">∃</string>
+    <string name="and">&amp;</string>
+    <string name="or">|</string>
+    <string name="not">¬</string>
+    <string name="implication">→</string>
+
+    <string name="constants">Constants</string>
+    <string name="predicates">Predicates</string>
+    <string name="functions">Functions</string>
+</resources>
