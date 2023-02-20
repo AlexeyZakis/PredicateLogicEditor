@@ -1,1 +1,1 @@
-# PredicateLogiceditor
+# PredicateLogicEditor
