@@ -19,13 +19,15 @@ fun getAllVariables(string: String): ArrayList<Pair<Int, String>> {
         if (string[index].toString() == ANY_SYMBOL || string[index].toString() == EXIST_SYMBOL) {
             variable = ""
 
-            while (string[index].toString() in RESERVED_CHARACTERS) {
+            while (index < string.length && string[index].toString() in RESERVED_CHARACTERS) {
                 ++index
             }
-            while (string[index].toString() !in RESERVED_CHARACTERS) {
+            while (index < string.length && string[index].toString() !in RESERVED_CHARACTERS) {
                 variable += string[index++]
             }
-            positionsList.add(Pair(index - variable.length, variable))
+            if (variable != "") {
+                positionsList.add(Pair(index - variable.length, variable))
+            }
         }
         ++index
     }
