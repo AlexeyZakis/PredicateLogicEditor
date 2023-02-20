@@ -18,6 +18,8 @@ val BRACKETS_COLORS = arrayOf(
     Color.rgb(153, 51, 255),
 )
 
+val WRONG_NAMES_COLOR = Color.rgb(206, 50, 38)
+
 val TOOLBAR_BGC = Color.rgb(47, 47, 47)
 
 const val OPEN_BRACKET_SYMBOL = "("
@@ -45,3 +47,6 @@ val RESERVED_CHARACTERS = arrayOf(
     ";",
     " ",
 )
+
+val logicalConnectivesList = arrayListOf(AND_SYMBOL, OR_SYMBOL, NOT_SYMBOL, IMPLICATION_SYMBOL)
+val quantifierList = arrayListOf(ANY_SYMBOL, EXIST_SYMBOL)

@@ -31,14 +31,15 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
         getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(TOOLBAR_BGC))
 
+        binding.textField.setText("S(s) & R(x) & ∀ε (R(ε) & (0 < ε) → ∃n(N(n) & ∀y (∃m (N(m) & (n <= m) & E(y, m, s)) → ad(x, y) <= ε)))")
+
         var textLength = binding.textField.text.toString().length
 
-        val constantsList = arrayListOf<String>("Ali")
-        val predicatesList = arrayListOf<String>("isTime", "isGood")
-        val functionsList = arrayListOf<String>("getBest")
+        val constantsList = arrayListOf<String>("0", "s", "x")
+        val predicatesList = arrayListOf<String>("R", "N", "S", "E", "<", "<=")
+        val functionsList = arrayListOf<String>("ad")
 
-        val logicalConnectivesList = arrayListOf(AND_SYMBOL, OR_SYMBOL, NOT_SYMBOL, IMPLICATION_SYMBOL)
-        val quantifierList = arrayListOf(ANY_SYMBOL, EXIST_SYMBOL)
+        var variablesList: ArrayList<Pair<Int, String>>
 
         binding.textField.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
 
                     text = getTextWithColoredElements(text, logicalConnectivesList, LOGICAL_CONNECTIVES_COLOR, false)
                     text = getTextWithColoredElements(text, quantifierList, QUANTIFIERS_COLOR, false)
+
+                    variablesList = getAllVariables(text.toString())
+
+                    text = getTextWithColoredWrongNames(text, WRONG_NAMES_COLOR, constantsList, predicatesList, functionsList, variablesList)
 
                     cursorLastPos = binding.textField.getSelectionStart()
                     textLength = binding.textField.text.toString().length
