@@ -7,6 +7,8 @@
     <string name="or">|</string>
     <string name="not">¬</string>
     <string name="implication">→</string>
+    <string name="openBracket">(</string>
+    <string name="closeBracket">)</string>
 
     <string name="constants">Constants</string>
     <string name="predicates">Predicates</string>

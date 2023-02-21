@@ -14,27 +14,39 @@
         android:orderInCategory="1"
         />
     <item
-        android:title="@string/and"
-        android:id="@+id/and"
-        app:showAsAction="always"
-        android:orderInCategory="2"
-        />
-    <item
-        android:title="@string/or"
-        android:id="@+id/or"
-        app:showAsAction="always"
-        android:orderInCategory="3"
-        />
-    <item
         android:title="@string/not"
         android:id="@+id/not"
         app:showAsAction="always"
-        android:orderInCategory="4"
+        android:orderInCategory="2"
         />
     <item
         android:title="@string/implication"
         android:id="@+id/implication"
         app:showAsAction="always"
+        android:orderInCategory="3"
+        />
+    <item
+        android:title="@string/and"
+        android:id="@+id/and"
+        app:showAsAction="always"
+        android:orderInCategory="4"
+        />
+    <item
+        android:title="@string/or"
+        android:id="@+id/or"
+        app:showAsAction="always"
         android:orderInCategory="5"
+        />
+    <item
+        android:title="@string/openBracket"
+        android:id="@+id/openBracket"
+        app:showAsAction="always"
+        android:orderInCategory="6"
+        />
+    <item
+        android:title="@string/closeBracket"
+        android:id="@+id/closeBracket"
+        app:showAsAction="always"
+        android:orderInCategory="7"
         />
 </menu>

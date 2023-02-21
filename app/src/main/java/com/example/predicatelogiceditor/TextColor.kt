@@ -52,7 +52,9 @@ fun getAllElementsPos(string: String, subString: String, exactMatch: Boolean): A
             ++index
             continue
         }
-
+        if (positionsList.isNotEmpty() && positionsList[positionsList.size - 1] == index) {
+            break
+        }
         positionsList.add(index)
         ++index
     }
@@ -69,6 +71,18 @@ fun getTextWithColoredElements(string: SpannableStringBuilder, elements: ArrayLi
     }
 
    return text
+}
+
+fun getTextWithColoredElements(string: SpannableStringBuilder, elements: ArrayList<Pair<Int, String>>, color: Int): SpannableStringBuilder {
+    var text = SpannableStringBuilder(string)
+
+    elements.forEach { element ->
+        getAllElementsPos(string.toString(), element.second, true).forEach { pos ->
+            text = getColorText(text, color, pos, pos + element.second.length)
+        }
+    }
+
+    return text
 }
 
 fun getTextWithColoredWrongNames(string: SpannableStringBuilder, color: Int, constantsList: ArrayList<String>, predicatesList: ArrayList<String>, functionsList: ArrayList<String>, variablesList: ArrayList<Pair<Int, String>>): SpannableStringBuilder {
